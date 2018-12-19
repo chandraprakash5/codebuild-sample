@@ -5,11 +5,14 @@ set -e
 cd $CODEBUILD_SRC_DIR
 # latest commit
 LATEST_COMMIT=$(git rev-parse HEAD)
+echo $LATEST_COMMIT
 
 FOLDER1_COMMIT=$(git log -1 --format=format:%H --full-diff first_app)
 FOLDER2_COMMIT=$(git log -1 --format=format:%H --full-diff base_app)
 
-if [ $FOLDER1_COMMIT = $LATEST_COMMIT ] || [ $FOLDER2_COMMIT = $LATEST_COMMIT ];
+echo $FOLDER1_COMMIT
+echo $FOLDER2_COMMIT
+if [ $FOLDER1_COMMIT == $LATEST_COMMIT ] || [ $FOLDER2_COMMIT == $LATEST_COMMIT ];
     then
         echo "files in first_app has changed"
         docker build -t codebuild_first_app:$LATEST_COMMIT -f first_app/Dockerfile .
