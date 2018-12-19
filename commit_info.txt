@@ -1,5 +1,0 @@
-commit a11a0dea25325bda72e599cbc0c375299f0dcdf7
-Author: chandraprakash5 <chandraprakash54@hotmail.com>
-Date:   Wed Dec 19 14:36:13 2018 +0530
-
-    Added 3 microservices
