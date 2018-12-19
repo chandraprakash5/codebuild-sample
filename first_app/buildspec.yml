@@ -1,0 +1,14 @@
+
+version : 0.2
+
+phases:
+  pre-build:
+    commands:
+      - docker login --username=$DOCKER_ID_USER --password=$DOCKER_PASS
+  build:
+    commands:
+      - bash ../build.sh
+
+artifacts:
+  files:
+    - commit_info.txt
