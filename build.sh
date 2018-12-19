@@ -2,7 +2,6 @@
 
 set -e
 
-cd $CODEBUILD_SRC_DIR
 # latest commit
 LATEST_COMMIT=$(git rev-parse HEAD)
 echo $LATEST_COMMIT
