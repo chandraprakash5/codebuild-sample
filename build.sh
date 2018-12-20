@@ -9,5 +9,3 @@ docker build -t codebuild_first_app:$LATEST_COMMIT -f first_app/Dockerfile .
 docker tag codebuild_first_app:$LATEST_COMMIT $DOCKER_ID_USER/codebuild_first_app:$LATEST_COMMIT
 docker push $DOCKER_ID_USER/codebuild_first_app:$LATEST_COMMIT
 git log -1 > ${LATEST_COMMIT}_commit_info.txt
-s3cmd put ${LATEST_COMMIT}_commit_info.txt s3://codebuild-declayer-725566882860-artifacts/
-rm ${LATEST_COMMIT}_commit_info.txt
